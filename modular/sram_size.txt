@@ -1,0 +1,90 @@
+JasperGold Apps 2021.03 FCS 64 bits 2021.03.23 02:50:43 UTC
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2021 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc. 
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+JasperGold Apps Analysis Session - /barrett/scratch/nestan/lake/CAV/modular/jgproject/sessionLogs/session_0
+
+INFO: successfully checked out license "jasper_fpv".
+INFO: reading configuration file "/afs/cs.stanford.edu/u/nestan/.config/jasper/jaspergold.conf".
+% analyze -sv12 {sram_lake_top.sv}; elaborate -top LakeTop; get_design_info; exit;
+[-- (VERI-1482)] Analyzing Verilog file '/barrett/scratch/local/stow/jasper_2021.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file 'sram_lake_top.sv'
+INFO (ISW003): Top module name is "LakeTop".
+[INFO (HIER-8002)] sram_lake_top.sv(364): Disabling old hierarchical reference handler
+[WARN (VERI-1927)] sram_lake_top.sv(1535): port 'parallel_out' remains unconnected for this instance
+[INFO (VERI-1018)] sram_lake_top.sv(1162): compiling module 'storage_config_seq'
+[INFO (VERI-1018)] sram_lake_top.sv(442): compiling module 'for_loop_6_16'
+[INFO (VERI-1018)] sram_lake_top.sv(366): compiling module 'addr_gen_6_16'
+[INFO (VERI-1018)] sram_lake_top.sv(1078): compiling module 'sched_gen_6_16'
+[INFO (VERI-1018)] sram_lake_top.sv(1729): compiling module 'strg_ub_agg_sram_shared'
+[INFO (VERI-1018)] sram_lake_top.sv(404): compiling module 'addr_gen_6_9'
+[INFO (VERI-1018)] sram_lake_top.sv(1828): compiling module 'strg_ub_sram_only'
+[INFO (VERI-1018)] sram_lake_top.sv(2000): compiling module 'strg_ub_sram_tb_shared'
+[INFO (VERI-1018)] sram_lake_top.sv(2099): compiling module 'strg_ub_vec'
+[INFO (VERI-1018)] sram_lake_top.sv(1539): compiling module 'strg_ram'
+[INFO (VERI-1018)] sram_lake_top.sv(806): compiling module 'reg_fifo_d_4_w_1'
+[INFO (VERI-1018)] sram_lake_top.sv(943): compiling module 'reg_fifo_d_4_w_1_unq0'
+[INFO (VERI-1018)] sram_lake_top.sv(1246): compiling module 'strg_fifo'
+[WARN (VERI-9028)] sram_lake_top.sv(1519): missing/open ports on instance back_rf of module reg_fifo_d_4_w_1_unq0
+[INFO (VERI-1018)] sram_lake_top.sv(1132): compiling module 'sram_stub'
+[WARN (VERI-9033)] sram_lake_top.sv(1143): array data_array (size 32768) automatically BLACK-BOXED. Use the "elaborate -bbox_a" command to prevent automatic black-boxing.
+[INFO (VERI-1018)] sram_lake_top.sv(2239): compiling module 'tsmc_name_generator'
+[INFO (VERI-1018)] sram_lake_top.sv(1): compiling module 'Chain'
+[INFO (VERI-1018)] sram_lake_top.sv(29): compiling module 'LakeTop'
+[WARN (VDB-1002)] sram_lake_top.sv(158): net 'ub_valid_out[1]' does not have a driver
+INFO (INL208): Elaboration synthesis summary:
+  Number of synthesized netlists          17 (0 packages)
+  Single run mode                         On
+  Pipeline                                On (17 pipelined netlists)
+  Late hierarchical reference connection  On
+  Number of analyzed Verilog modules      17 (17 synthesized)
+  Number of analyzed VHDL entities        0 (0 synthesized)
+INFO (INL003): Clearing all state information (assumes, stopats, and so forth).
+Statistics [for instance "LakeTop"]
+--------------------------
+# Flops:         81 (944) (0 property flop bits)
+# Latches:       0 (0)
+# Gates:         1597 (19099)
+# Nets:          2436
+# Ports:         56
+# RTL Lines:     2251
+# RTL Instances: 29
+# Embedded Assumptions: 0
+# Embedded Assertions:  0
+# Embedded Covers:      0
+[<embedded>] % INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 0.337 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

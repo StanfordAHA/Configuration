@@ -1,0 +1,57 @@
+# read in the file(s) -- there can be multiple
+# whitespace separated files, and you can
+# escape new lines if necessary
+read -formal agg_sram_tb/modular/agg_lake_top.sv;
+
+
+# prep does a conservative elaboration
+# of the top module provided
+prep -top LakeTop;
+
+
+# this command just does a sanity check
+# of the hierarchy
+hierarchy -check;
+
+# this processes memories
+# nomap means it will keep them as arrays, remove -nomap keep memory if you don't want to use the theory of Arrays
+#memory -nomap;
+memory
+
+#initialize all signals after reset to 0
+#sim -clock clk -resetn rst_n -n 3 -w -zinit
+#sim -clock clk -resetn rst_n -n 10 -rstlen 10 -w -zinit;
+
+
+# (optional) use an "explicit" clock
+# e.g. every state is a half cycle of the
+# fastest clock
+# use this option if you see errors that
+# refer to "adff" or asynchronous components
+# IMPORTANT NOTE: the clocks are not
+# automatically toggled if you use this option
+# clk2fflogic;
+
+#flatten
+
+async2sync;
+
+flatten;
+
+# If an assumption is flopped, you might
+# see strange behavior at the last state
+# (because the clock hasn't toggled)
+# this command ensures that assumptions
+# hold at every state
+chformal -assume -early;
+
+# This turns all undriven signals into
+# inputs
+setundef -undriven -expose;
+
+#initialize all signals after reset to 0
+#sim -clock clk -resetn rst_n -n 3 -w -zinit;
+sim -clock clk -resetn rst_n -n 2 -rstlen 2 -w -zinit;
+
+# This writes to a file in BTOR2 format
+write_btor agg_sram_tb/modular/agg_lake_top.btor2
