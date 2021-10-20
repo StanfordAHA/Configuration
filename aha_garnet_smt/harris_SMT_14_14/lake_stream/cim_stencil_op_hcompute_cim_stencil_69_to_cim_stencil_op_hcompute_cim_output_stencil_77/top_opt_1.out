@@ -1,0 +1,5 @@
+input:['config_finder_Lake_Top_coi_cluster.py', '--seq', '/Users/nestantsiskaridze/Documents/Clockwork/clockwork/aha_garnet_smt/harris_SMT_14_14/lake_stream/cim_stencil_op_hcompute_cim_stencil_69_to_cim_stencil_op_hcompute_cim_output_stencil_77/sram_post.csv', '--hwpath', './agg_sram_tb/modular/', '--sram', '-opt', '1']
+Solving an SRAM module
+VALID MAP:{'valid_in': 'strg_ub.agg_sram_shared.agg_read', 'valid_out': 'strg_ub.sram_only.read'}
+DATA MAP:{'data_in': 'agg_data_out_top', 'data_out': 'formal_mem_data'}
+optimize_dims = True, optimize_ranges = False, optimize_strides = False, optimize_start_addrs = False, optimize_bit_width = False, binary_search = True, add_bounds = False
