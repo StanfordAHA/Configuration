@@ -92,9 +92,13 @@ All design modules used in our experiments are in the folder `modular`. This fol
 
 The input-output specifications are provided in the `aha_garnet_smt` folder. There are four different image processing applications: identity-stream, convolution 3x3, cascade, and harris.
 
-To reproduce the experiments use:
+## Experiments
+
+* To reproduce the experiments use:
 
 Pono commit a667066363f0d67789acc044b4b976d40e6e6f1b.
+
 smt-switch commit 9d8b1ebe5a06c3f7a2f924efcdcaa978f503232a.
+
 Boolector Version 3.2.1 HEAD-95859db82fe5b08d063a16d6a7ffe4a941cb0f7d.
 
